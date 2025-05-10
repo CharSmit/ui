@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landmarks</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar .nav-link.active {
+            font-weight: bold;
+            color: #667eea !important;
+        }
+        .landmark-img {
+            width: 100%;
+            max-width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .landmark-list {
+            max-height: 400px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 0.5rem 0;
+            margin-bottom: 2rem;
+        }
+        .landmark-list .list-group-item.active {
+            background: #667eea;
+            color: #fff;
+            border-color: #667eea;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-2 d-none d-md-block sidebar pt-4">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
+                <li class="nav-item"><a class="nav-link active" href="landmarks.html">Landmarks</a></li>
+                <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+            </ul>
+        </nav>
+      
+
+        <main class="col-md-10 ms-sm-auto px-4 pt-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="landmark-list list-group" id="landmarkList">
+                        <button class="list-group-item list-group-item-action active" data-index="0" alt="Bletchley Park - Historic codebreaking site">Bletchley Park</button>
+                        <button class="list-group-item list-group-item-action" data-index="1" alt="St Peter's Church Ruins - Medieval church remains">St Peter's Church Ruins</button>
+                        <button class="list-group-item list-group-item-action" data-index="2" alt="Paris House - Historic safehouse">Paris House</button>
+                        <button class="list-group-item list-group-item-action" data-index="3" alt="Windmill Hill - Historic windmill site">Windmill Hill</button>
+                        <button class="list-group-item list-group-item-action" data-index="4" alt="Bradwell Abbey - Medieval abbey ruins">Bradwell Abbey</button>
+                        <button class="list-group-item list-group-item-action" data-index="5" alt="Campbell Park Tower - Modern landmark">Campbell Park Tower</button>
+                        <button class="list-group-item list-group-item-action" data-index="6" alt="The Tree Cathedral - Natural landmark">The Tree Cathedral</button>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div id="landmarkContent">
+                        
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="landmarks.js"></script>
+</body>
+</html> 

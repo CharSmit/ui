@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <style>
+        .sidebar {
+            min-height: 100vh;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar .nav-link.active {
+            font-weight: bold;
+            color: #667eea !important;
+        }
+        .article-section {
+            margin-bottom: 3rem;
+            padding: 2rem 1rem;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: box-shadow 0.5s, background 0.5s;
+        }
+        .article-section.highlight {
+            background: #e9f0ff;
+            box-shadow: 0 4px 16px rgba(102,126,234,0.2);
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.98); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .article-img {
+            width: 100%;
+            max-width: 350px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        .author-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-right: 1rem;
+        }
+        .author-section {
+            display: flex;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block sidebar pt-4">
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
+                <li class="nav-item"><a class="nav-link" href="landmarks.html">Landmarks</a></li>
+                <li class="nav-item"><a class="nav-link active" href="articles.html">Articles</a></li>
+            </ul>
+        </nav>
+      
+        <main class="col-md-10 ms-sm-auto px-4 pt-4">
+            <h2 class="mb-4">Articles</h2>
+            <div class="row" id="articlesList">
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- Article Modal -->
+<div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="articleModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="articleContent">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="articles.js"></script>
+</body>
+</html> 

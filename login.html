@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="authLink">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <!-- Login Form -->
+                        <div id="loginFormContainer">
+                            <h2 class="text-center mb-4">Login</h2>
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginUsername" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="loginUsername" name="username" required>
+                                    <div class="invalid-feedback" id="loginUsernameError"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" name="password" required>
+                                    <div class="invalid-feedback" id="loginPasswordError"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                Don't have an account? <a href="#" id="showRegister" class="text-decoration-none">Register</a>
+                            </div>
+                        </div>
+
+                        <!-- Register Form -->
+                        <div id="registerFormContainer" class="hidden">
+                            <h2 class="text-center mb-4">Register</h2>
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="registerUsername" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="registerUsername" name="username" required>
+                                    <div class="invalid-feedback" id="registerUsernameError"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" name="password" required>
+                                    <div class="invalid-feedback" id="registerPasswordError"></div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+                                    <div class="invalid-feedback" id="confirmPasswordError"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                Already have an account? <a href="#" id="showLogin" class="text-decoration-none">Login</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="login.js"></script>
+</body>
+</html>

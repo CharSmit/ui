@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active fw-bold" href="restaurants.html">Restaurants</a></li>
+                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
+                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid py-4">
+    <div class="row">
+        <!-- Filters and Prioritise -->
+        <div class="col-md-6 mx-auto">
+            <h2 class="mb-4">Find Restaurants</h2>
+            <form id="filtersForm">
+                <div class="mb-3">
+                    <label for="restaurantSearch" class="form-label">Search</label>
+                    <input type="search" class="form-control" id="restaurantSearch" placeholder="Search restaurants...">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="priceFilter" class="form-label">Price per person (£)</label>
+                        <select class="form-select" id="priceFilter">
+                            <option value="">Any</option>
+                            <option value="0-10">0-10</option>
+                            <option value="10-20">10-20</option>
+                            <option value="20-30">20-30</option>
+                            <option value="30+">30+</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-dark rounded-circle prioritise-oval" data-filter="priceFilter" aria-label="Prioritise Price" style="width:32px;height:32px;"></button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="distanceFilter" class="form-label">Distance (km)</label>
+                        <select class="form-select" id="distanceFilter">
+                            <option value="">Any</option>
+                            <option value="10+">10+</option>
+                            <option value="5-10">5-10</option>
+                            <option value="2-5">2-5</option>
+                            <option value="0-2">0-2</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-dark rounded-circle prioritise-oval" data-filter="distanceFilter" aria-label="Prioritise Distance" style="width:32px;height:32px;"></button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="cuisineFilter" class="form-label">Cuisine</label>
+                        <select class="form-select" id="cuisineFilter">
+                            <option value="">Any</option>
+                            <option value="American">American</option>
+                            <option value="British">British</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="French">French</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Mediterranean">Mediterranean</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Thai">Thai</option>
+                            <option value="Vegan">Vegan</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-dark rounded-circle prioritise-oval" data-filter="cuisineFilter" aria-label="Prioritise Cuisine" style="width:32px;height:32px;"></button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="ratingFilter" class="form-label">Rating</label>
+                        <select class="form-select" id="ratingFilter">
+                            <option value="">Any</option>
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-dark rounded-circle prioritise-oval" data-filter="ratingFilter" aria-label="Prioritise Rating" style="width:32px;height:32px;"></button>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <label for="serviceTypeFilter" class="form-label">Service Type</label>
+                        <select class="form-select" id="serviceTypeFilter">
+                            <option value="">Any</option>
+                            <option value="Takeaway">Takeaway</option>
+                            <option value="Eat in">Eat in</option>
+                            <option value="Delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-end">
+                        <button type="button" class="btn btn-outline-dark rounded-circle prioritise-oval" data-filter="serviceTypeFilter" aria-label="Prioritise Service Type" style="width:32px;height:32px;"></button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-12">
+            <div id="resultsContainer"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Review Modal -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">Write a Review</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="reviewForm">
+                    <div class="mb-3">
+                        <label for="reviewRating" class="form-label">Rating</label>
+                        <select class="form-select" id="reviewRating" required>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4 Stars</option>
+                            <option value="3">3 Stars</option>
+                            <option value="2">2 Stars</option>
+                            <option value="1">1 Star</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="reviewText" class="form-label">Your Review</label>
+                        <textarea class="form-control" id="reviewText" rows="4" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="submitReview">Submit Review</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="restaurants.js"></script>
+</body>
+</html> 
