@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // --- AUTH LOGIC ---
+    
     function showAuth() {
         document.getElementById('authContainer').style.display = '';
         document.getElementById('bookingContent').style.display = 'none';
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('bookingContent').style.display = '';
     }
 
-    // Toggle between login and register forms
+    
     document.getElementById('showRegister').addEventListener('click', function() {
         document.getElementById('loginFormContainer').classList.add('hidden');
         document.getElementById('registerFormContainer').classList.remove('hidden');
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('loginFormContainer').classList.remove('hidden');
     });
 
-    // Register logic
+    
     document.getElementById('registerForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const username = document.getElementById('registerUsername').value.trim();
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderBookingForm();
     });
 
-    // Login logic
+    
     document.getElementById('loginForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const username = document.getElementById('loginUsername').value.trim();
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderBookingForm();
     });
 
-    // --- BOOKING LOGIC ---
+    
     function renderBookingForm() {
         const currentUser = JSON.parse(localStorage.getItem('currentUser'));
         const activity = JSON.parse(localStorage.getItem('selectedActivity'));
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.innerHTML = '<p>No activity selected.</p>';
             return;
         }
-        // Build ticket selectors
+        
         let ticketRows = '';
         activity.prices.forEach(([label, price], idx) => {
             ticketRows += `
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- INIT ---
+    
     if (localStorage.getItem('currentUser')) {
         showBooking();
         renderBookingForm();

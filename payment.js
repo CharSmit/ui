@@ -74,13 +74,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Store booking for user
+        
         const userBookings = JSON.parse(localStorage.getItem('userBookings')) || {};
         if (!userBookings[currentUser.username]) {
             userBookings[currentUser.username] = [];
         }
 
-        // Format date as DD/MM/YYYY
+        
         const today = new Date();
         const day = String(today.getDate()).padStart(2, '0');
         const month = String(today.getMonth() + 1).padStart(2, '0');
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         localStorage.setItem('userBookings', JSON.stringify(userBookings));
 
-        // Set flag for homepage to show booking confirmation
+        
         localStorage.removeItem('bookingInfo');
         window.location.href = 'index.html?bookingConfirmed=true';
     });

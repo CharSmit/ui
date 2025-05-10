@@ -87,6 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
             renderLandmark(Number(e.target.dataset.index));
         }
     });
-    // Initial render
+    
     renderLandmark(0);
 }); 

@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user is logged in
+    
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser) {
         window.location.href = 'login.html';
         return;
     }
 
-    // Display user information
+    
     const userGreeting = document.getElementById('userGreeting');
     const usernameDisplay = document.getElementById('usernameDisplay');
     const authLink = document.getElementById('authLink');
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.container').insertBefore(alertDiv, document.querySelector('.container').firstChild);
     }
 
-    // Display user bookings
+    
     const userBookings = JSON.parse(localStorage.getItem('userBookings')) || {};
     const bookings = userBookings[currentUser.username] || [];
     const bookingsList = document.getElementById('userBookings');
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
 
-    // Display recent reviews
+    
     const allReviews = [];
     const restaurantReviews = JSON.parse(localStorage.getItem('restaurantReviews')) || {};
     

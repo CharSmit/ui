@@ -1,4 +1,4 @@
-// Image rotation setup
+
 let currentImageIndex = 0;
 const images = [
     "images/timeline/st-peters-church-2.jpg",
@@ -14,12 +14,12 @@ function rotateImage() {
     }
 }
 
-// Enable Bootstrap popovers and setup event listeners
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Start image rotation
+    
     setInterval(rotateImage, 5000);
 
-    // Enable Bootstrap popovers
+    
     const popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
     popoverTriggerList.map(function (popoverTriggerEl) {
         return new bootstrap.Popover(popoverTriggerEl);
@@ -39,13 +39,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add click handling for timeline events
+    
     const timelineEvents = document.querySelectorAll('.timeline-event');
     timelineEvents.forEach(event => {
         event.addEventListener('click', function() {
-            // Remove active class from all events
+            
             timelineEvents.forEach(e => e.classList.remove('active'));
-            // Add active class to clicked event
+            
             this.classList.add('active');
         });
     });

@@ -77,7 +77,7 @@ function renderArticles() {
         </div>
     `).join('');
 
-    // Check for article parameter and highlight
+    
     const urlParams = new URLSearchParams(window.location.search);
     const articleIndex = urlParams.get('article');
     if (articleIndex !== null) {
@@ -85,11 +85,11 @@ function renderArticles() {
         if (articleElement) {
             const card = articleElement.querySelector('.card');
             card.classList.add('highlight');
-            // Scroll to the article
+            
             setTimeout(() => {
                 articleElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }, 100);
-            // Remove highlight after 2 seconds
+            
             setTimeout(() => {
                 card.classList.remove('highlight');
             }, 2000);

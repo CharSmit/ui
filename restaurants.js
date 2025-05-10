@@ -1,4 +1,4 @@
-// Demo restaurant data
+
 const restaurants = [
     {
         name: "Restaurant 1",
@@ -126,7 +126,7 @@ let filteredRestaurants = restaurants;
 let prioritised = [];
 let currentRestaurant = null;
 
-// Initialize reviews in localStorage if not exists
+
 if (!localStorage.getItem('restaurantReviews')) {
     localStorage.setItem('restaurantReviews', JSON.stringify({}));
 }
@@ -138,12 +138,12 @@ function renderResults() {
         return;
     }
 
-    // Create a row to hold all restaurant cards
+    
     const row = document.createElement('div');
     row.className = 'row';
     
     filteredRestaurants.forEach(restaurant => {
-        // Get reviews for this restaurant
+        
         const reviews = JSON.parse(localStorage.getItem('restaurantReviews'))[restaurant.name] || [];
         const averageRating = reviews.length > 0 
             ? (reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length).toFixed(1)
@@ -180,7 +180,7 @@ function renderResults() {
     container.innerHTML = '';
     container.appendChild(row);
 
-    // Add event listeners to review buttons
+    
     document.querySelectorAll('.review-btn').forEach(btn => {
         btn.onclick = function() {
             const restaurantName = this.getAttribute('data-restaurant');
@@ -203,7 +203,7 @@ function showReviewModal(restaurantName) {
     modal.show();
 }
 
-// Handle review submission
+
 document.getElementById('submitReview').onclick = function() {
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
     if (!currentUser) {
@@ -259,7 +259,7 @@ function applyFilters() {
             pass = pass && r.name.toLowerCase().includes(search);
         }
 
-        // Price filter
+        
         if (price) {
             if (price === '0-10') pass = pass && r.price <= 10;
             else if (price === '10-20') pass = pass && r.price > 10 && r.price <= 20;
@@ -267,7 +267,7 @@ function applyFilters() {
             else if (price === '30+') pass = pass && r.price > 30;
         }
 
-        // Distance filter - show restaurants with distance less than or equal to selected
+        
         if (distance) {
             if (distance === '0-2') pass = pass && r.distance <= 2;
             else if (distance === '2-5') pass = pass && r.distance <= 5;
@@ -275,22 +275,22 @@ function applyFilters() {
             else if (distance === '10+') pass = pass && r.distance > 10;
         }
 
-        // Cuisine filter
+        
         if (cuisine) pass = pass && r.cuisine === cuisine;
 
-        // Rating filter - show restaurants with rating greater than or equal to selected
+        
         if (rating) {
             const minRating = parseFloat(rating);
             pass = pass && r.rating >= minRating;
         }
 
-        // Service type filter
+        
         if (service) pass = pass && r.service.includes(service);
 
         return pass;
     });
 
-    // Sort by prioritised filters
+    
     if (prioritised.length) {
         filteredRestaurants.sort((a, b) => {
             for (let p of prioritised) {
@@ -321,13 +321,13 @@ document.getElementById('filtersForm').onsubmit = function(e) {
         search: document.getElementById('restaurantSearch').value
     };
     
-    // Store search parameters in localStorage
+    
     localStorage.setItem('restaurantSearchParams', JSON.stringify({
         filters,
         prioritised
     }));
     
-    // Redirect to results page
+    
     window.location.href = 'restaurant-results.html';
 };
 
@@ -337,7 +337,7 @@ document.getElementById('restaurantSearch').oninput = function(e) {
     renderResults();
 };
 
-// Prioritise ovals logic
+
 const ovals = document.querySelectorAll('.prioritise-oval');
 ovals.forEach(btn => {
     btn.onclick = function() {
@@ -350,7 +350,7 @@ ovals.forEach(btn => {
                 btn.classList.add('active','bg-dark');
                 prioritised.push(filter);
             } else {
-                // Only 2 can be selected
+                
                 const first = prioritised.shift();
                 document.querySelector(`.prioritise-oval[data-filter="${first}"]`).classList.remove('active','bg-dark');
                 btn.classList.add('active','bg-dark');
@@ -360,7 +360,7 @@ ovals.forEach(btn => {
     };
 });
 
-// Logout
+
 const logoutLink = document.getElementById('logoutLink');
 if (logoutLink) {
     logoutLink.onclick = function(e) {
@@ -370,5 +370,5 @@ if (logoutLink) {
     };
 }
 
-// Initial render
+
 renderResults(); 

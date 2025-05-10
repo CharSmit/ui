@@ -1,4 +1,4 @@
-/* Global Styles */
+
 :root {
     --primary-color: #0d6efd;
     --secondary-color: #6c757d;
@@ -15,7 +15,7 @@ body {
     flex-direction: column;
 }
 
-/* Navbar Styles */
+
 .navbar {
     background-color: white !important;
     box-shadow: var(--card-shadow);
@@ -51,7 +51,7 @@ body {
     border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Card Styles */
+
 .card {
     border: none;
     box-shadow: var(--card-shadow);
@@ -74,7 +74,7 @@ body {
     color: #666;
 }
 
-/* Button Styles */
+
 .btn {
     border-radius: 4px;
     padding: 0.5rem 1rem;
@@ -115,7 +115,7 @@ body {
     transform: translateY(-1px);
 }
 
-/* Form Styles */
+
 .form-control, .form-select {
     border-radius: 4px;
     border: 1px solid #dee2e6;
@@ -132,7 +132,7 @@ body {
     color: #495057;
 }
 
-/* Modal Styles */
+
 .modal-content {
     border: none;
     border-radius: 8px;
@@ -151,7 +151,7 @@ body {
     border-radius: 0 0 8px 8px;
 }
 
-/* Restaurant Card Specific Styles */
+
 .restaurant-card img {
     height: 200px;
     object-fit: cover;
@@ -167,25 +167,25 @@ body {
     font-size: 0.9rem;
 }
 
-/* Review Stars */
+
 .stars {
     color: #ffc107;
     font-size: 1.1rem;
 }
 
-/* Container Styles */
+
 .container, .container-fluid {
     padding: 2rem 1rem;
 }
 
-/* Alert Styles */
+
 .alert {
     border: none;
     border-radius: 4px;
     box-shadow: var(--card-shadow);
 }
 
-/* List Group Styles */
+
 .list-group-item {
     border: none;
     margin-bottom: 0.5rem;
@@ -193,7 +193,7 @@ body {
     box-shadow: var(--card-shadow);
 }
 
-/* Prioritise Oval Button */
+
 .prioritise-oval {
     width: 32px;
     height: 32px;
@@ -214,7 +214,7 @@ body {
     color: white;
 }
 
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     .container, .container-fluid {
         padding: 1rem;
@@ -230,7 +230,7 @@ body {
     }
 }
 
-/* Animation Classes */
+
 .fade-in {
     animation: fadeIn 0.3s ease-in;
 }
@@ -246,7 +246,7 @@ body {
     }
 }
 
-/* Utility Classes */
+
 .text-primary {
     color: var(--primary-color) !important;
 }
@@ -267,23 +267,23 @@ body {
     box-shadow: var(--hover-shadow) !important;
 }
 
-/* Custom background gradient */
+
 .bg-gradient {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
 
-/* Custom text color for main heading */
+
 main h1 {
     color: white;
 }
 
-/* Custom hidden class */
+
 .hidden {
     display: none;
 }
 
-/* Custom form validation styles */
+
 .was-validated .form-control:invalid {
     border-color: #dc3545;
 }
@@ -292,7 +292,7 @@ main h1 {
     border-color: #198754;
 }
 
-/* Custom link styles */
+
 .text-primary:hover {
     color: #764ba2 !important;
 }
@@ -304,7 +304,7 @@ main h1 {
     font-family: Arial, sans-serif;
 }
 
-/* Topbar Styles */
+
 .topbar {
     background: white;
     padding: 1rem 2rem;
@@ -334,7 +334,7 @@ main h1 {
     color: #667eea;
 }
 
-/* Main Content Styles */
+
 main {
     padding: 2rem;
     text-align: left;
@@ -365,7 +365,7 @@ main {
     text-decoration: underline;
 }
 
-/* Auth Container Styles */
+
 .auth-container {
     display: flex;
     justify-content: center;
@@ -457,7 +457,7 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Sidebar styles */
+
 .sidebar {
     min-height: 100vh;
     background: #f8f9fa;
@@ -468,7 +468,7 @@ button:hover {
     color: #667eea !important;
 }
 
-/* Timeline styles */
+
 .timeline-wrapper {
     position: relative;
     width: 100%;
@@ -542,7 +542,7 @@ button:hover {
     max-width: 250px;
 }
 
-/* Landmark styles */
+
 .landmark-img {
     width: 100%;
     max-width: 300px;
@@ -565,7 +565,7 @@ button:hover {
     border-color: #667eea;
 }
 
-/* Article styles */
+
 .article-section {
     margin-bottom: 3rem;
     padding: 2rem 1rem;
@@ -604,7 +604,7 @@ button:hover {
     margin-top: 1.5rem;
 }
 
-/* Activity List Styles */
+
 #activityList {
     background: white;
     border-radius: 8px;
@@ -657,7 +657,7 @@ button:hover {
     margin-bottom: 1.5rem;
 }
 
-/* Add highlight class for article cards */
+
 .card.highlight {
     background-color: #b2ebf2;
     transition: background-color 0.3s ease;
