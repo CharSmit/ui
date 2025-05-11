@@ -39,58 +39,69 @@
         }
     </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<body class="bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="authLink">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
-                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
-                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-            </ul>
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-2 d-none d-md-block sidebar pt-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="landmarks.html">Landmarks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                </ul>
+            </nav>
+          
+
+            <main class="col-md-10 ms-sm-auto px-4 pt-4">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="landmark-list list-group" id="landmarkList">
+                            <button class="list-group-item list-group-item-action active" data-index="0" alt="Bletchley Park - Historic codebreaking site">Bletchley Park</button>
+                            <button class="list-group-item list-group-item-action" data-index="1" alt="St Peter's Church Ruins - Medieval church remains">St Peter's Church Ruins</button>
+                            <button class="list-group-item list-group-item-action" data-index="2" alt="Paris House - Historic safehouse">Paris House</button>
+                            <button class="list-group-item list-group-item-action" data-index="3" alt="Windmill Hill - Historic windmill site">Windmill Hill</button>
+                            <button class="list-group-item list-group-item-action" data-index="4" alt="Bradwell Abbey - Medieval abbey ruins">Bradwell Abbey</button>
+                            <button class="list-group-item list-group-item-action" data-index="5" alt="Campbell Park Tower - Modern landmark">Campbell Park Tower</button>
+                            <button class="list-group-item list-group-item-action" data-index="6" alt="The Tree Cathedral - Natural landmark">The Tree Cathedral</button>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div id="landmarkContent">
+                            
+                        </div>
+                    </div>
+                </div>
+            </main>
         </div>
     </div>
-</nav>
-<div class="container-fluid">
-    <div class="row">
-        <!-- Sidebar -->
-        <nav class="col-md-2 d-none d-md-block sidebar pt-4">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
-                <li class="nav-item"><a class="nav-link active" href="landmarks.html">Landmarks</a></li>
-                <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
-            </ul>
-        </nav>
-      
-
-        <main class="col-md-10 ms-sm-auto px-4 pt-4">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="landmark-list list-group" id="landmarkList">
-                        <button class="list-group-item list-group-item-action active" data-index="0" alt="Bletchley Park - Historic codebreaking site">Bletchley Park</button>
-                        <button class="list-group-item list-group-item-action" data-index="1" alt="St Peter's Church Ruins - Medieval church remains">St Peter's Church Ruins</button>
-                        <button class="list-group-item list-group-item-action" data-index="2" alt="Paris House - Historic safehouse">Paris House</button>
-                        <button class="list-group-item list-group-item-action" data-index="3" alt="Windmill Hill - Historic windmill site">Windmill Hill</button>
-                        <button class="list-group-item list-group-item-action" data-index="4" alt="Bradwell Abbey - Medieval abbey ruins">Bradwell Abbey</button>
-                        <button class="list-group-item list-group-item-action" data-index="5" alt="Campbell Park Tower - Modern landmark">Campbell Park Tower</button>
-                        <button class="list-group-item list-group-item-action" data-index="6" alt="The Tree Cathedral - Natural landmark">The Tree Cathedral</button>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    <div id="landmarkContent">
-                        
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="landmarks.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="landmarks.js"></script>
 </body>
 </html> 

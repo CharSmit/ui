@@ -55,56 +55,67 @@
         }
     </style>
 </head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+<body class="bg-gradient">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="activities.html">Activities</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="history.html">History</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html" id="authLink">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Milton Keynes Central</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="restaurants.html">Restaurants</a></li>
-                <li class="nav-item"><a class="nav-link" href="history.html">History</a></li>
-                <li class="nav-item"><a class="nav-link" href="activities.html">Activities</a></li>
-            </ul>
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block sidebar pt-4">
+                <ul class="nav flex-column">
+                    <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
+                    <li class="nav-item"><a class="nav-link" href="landmarks.html">Landmarks</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="articles.html">Articles</a></li>
+                </ul>
+            </nav>
+          
+            <main class="col-md-10 ms-sm-auto px-4 pt-4">
+                <h2 class="mb-4">Articles</h2>
+                <div class="row" id="articlesList">
+                </div>
+            </main>
         </div>
     </div>
-</nav>
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar pt-4">
-            <ul class="nav flex-column">
-                <li class="nav-item"><a class="nav-link" href="history.html">Timeline</a></li>
-                <li class="nav-item"><a class="nav-link" href="landmarks.html">Landmarks</a></li>
-                <li class="nav-item"><a class="nav-link active" href="articles.html">Articles</a></li>
-            </ul>
-        </nav>
-      
-        <main class="col-md-10 ms-sm-auto px-4 pt-4">
-            <h2 class="mb-4">Articles</h2>
-            <div class="row" id="articlesList">
-            </div>
-        </main>
-    </div>
-</div>
 
 
-<div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="articleModalLabel"></h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="articleContent">
+    <div class="modal fade" id="articleModal" tabindex="-1" aria-labelledby="articleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="articleModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="articleContent">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="articles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="articles.js"></script>
 </body>
 </html> 
